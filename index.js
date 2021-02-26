@@ -35,16 +35,8 @@ function topDick(chatID){
 
 bot.start((ctx) => {
     let userID = ctx.update.message.from.id;
-    //console.log(ctx.update.message.from);
     console.log(ctx);
     return ctx.reply("[inline mention of a user](tg://user?id=669943226)");
-    /*if(userID == 669943226 || userID == 991818500){
-        return ctx.reply(ctx.update.message.from.first_name + ', бог');
-    }
-    else {
-        console.log(ctx.update.message.from);
-        return ctx.reply(ctx.update.message.from.first_name + ', не бог');
-    }*/
 });
 
 bot.command('dickplay', (ctx) => {
@@ -55,7 +47,6 @@ bot.command('dickplay', (ctx) => {
     //взяти юзєра з бд
     let user = chats[chatID][userID];
     console.log(chats);
-    //console.log(user);
     if(now.getDate() == user.lastGameTime.day && now.getMonth() == user.lastGameTime.month){
         return ctx.reply(
             user.first_name + `, ти вже грав сьогодні.\n`+
